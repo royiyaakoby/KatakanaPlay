@@ -1,0 +1,70 @@
+body{
+  margin: 100px 25%;
+  text-align: center;
+  align-items:center;
+  background-color: #d9eeec;
+}
+
+.Box {
+  /* background-color: #64b2cd; */
+  width: 900px;
+
+
+}
+.line {
+  position:relative;
+  left: 100px;
+}
+
+.letterBox{
+  margin: 5px;
+  display: inline-block;
+text-align: center;
+  width: 30px;
+  height: 30px;
+  color: #da9833;
+  border-style: solid;
+  border-width: thin;
+  background-color: #3c70a4;
+
+}
+
+.letterBox:hover{
+  color: red;
+  background-color: black;
+}
+
+
+
+
+
+
+/* //////////////////// Later //////////// */
+/* .letterBox {
+
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    /* padding: 12px 24px;a */
+    border: 1px solid #a12727;
+    border-radius: 8px;
+    background: #ff4a4a;
+
+    background: -moz-linear-gradient(top, #ff4a4a, #992727);
+    background: linear-gradient(to bottom, #ff4a4a, #992727);
+    -webkit-box-shadow: #ff5959 0px 0px 40px 0px;
+    -moz-box-shadow: #ff5959 0px 0px 40px 0px;
+    box-shadow: #ff5959 0px 0px 40px 0px;
+    text-shadow: #591717 1px 1px 1px;
+    font: normal normal bold 20px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.letterBox:hover {
+    background: #ff5959;
+
+    background: -moz-linear-gradient(top, #ff5959, #b62f2f);
+    background: linear-gradient(to bottom, #ff5959, #b62f2f);
+    color: #ffffff;
+    text-decoration: none;
+} */
