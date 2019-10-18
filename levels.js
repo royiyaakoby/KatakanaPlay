@@ -4,6 +4,7 @@
 const word = (word) => {
   word.location.forEach((currentValue, index, arr)=>{
   $("[name='" + currentValue+ "']").text(word.letters[index]);
+
 });
 
 };
