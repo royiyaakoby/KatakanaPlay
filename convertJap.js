@@ -325,9 +325,18 @@ function convertJap(hiragana) {
       break;
 
 
+      case "ャ":
+        convert = "ゃ";
+        break;
+
+
     case "ユ":
       convert = "ゆ";
       break;
+
+      case "ュ":
+        convert = "ゅ";
+        break;
 
 
     case "ヨ":

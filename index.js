@@ -1,7 +1,6 @@
 //jshint esversion:6
 
-let themMusic = new Audio('Media/Theme.mp3');
-let playmusic = false;
+
 let levels = 0;
 let counter = 0;
 let oldBox = 0;
@@ -9,25 +8,48 @@ let clickedArrey = [];
 let ex1 = [];
 let h1 = $(".h1Ex");
 let letterArrey = ['ア', 'イ', 'ウ', 'エ', 'オ', 'カ', 'キ', 'ク', 'ケ', 'コ', 'サ', 'シ', 'ス', 'セ', 'ソ', 'タ', 'チ', 'ツ', 'テ', 'ト', 'ナ', 'ニ', 'ネ', 'ヌ', 'ノ', 'ハ', 'ヒ', 'フ', 'ヘ', 'ホ', 'マ', 'ミ', 'ム', 'メ', 'モ', 'ヤ', 'ユ', 'ヨ'];
-let levelsArrey = [level1,level2];
+let levelsArrey = [level1, level2];
+
+const wordOutSound = new Audio('Media/wordOut.mp3');
+const clickSound = new Audio('Media/click.mp3');
+const endLevelSound = new Audio('Media/levelEnd.mp3');
+const themMusic = new Audio('Media/Theme.mp3');
+let playmusic = false;
 
 
-$('.audioBtn').on('click',function() {
-  if(playmusic == true) {
+
+$('.audioBtn').on('click', function() {
+  if (playmusic == true) {
     playmusic = false;
-      themMusic.pause();
+    themMusic.pause();
 
-  }else {
+  } else {
     playmusic = true;
-themMusic.loop = true;
-  themMusic.play();
-}
+    themMusic.loop = true;
+    themMusic.play();
+  }
+});
+///////////////////////////// EXTREA KEYS ///////
+$('body').keypress((key) => {
+  let targetKey = key.key;
+  if (targetKey <= 9 && targetKey > 0) {
+    ex1 = [];
+    levels = targetKey - 1;
+    levelBuild(levelsArrey[levels]);
+
+  }
 });
 
+$('.volSlider').on('input change', (event) => {
+  let levels = event.target.value;
+  themMusic.volume = levels / 100;
+  clickSound.volume = levels / 100;
+  wordOutSound.volume = levels / 100;
+  endLevelSound.volume = levels / 100;
 
+});
 
-
-// $(".Box").hide();
+/////////// START LEVEL /////////
 levelBuild(levelsArrey[0]);
 
 
@@ -35,8 +57,10 @@ levelBuild(levelsArrey[0]);
 
 
 $(".letterBox").click((line) => {
+  clickSound.play();
   let btnVal = convertJap(line.target.innerText);
   let newBox = Number(line.target.name);
+
   if (oldBox > 0) {
     if (newBox === oldBox) {
       console.log("Same!");
@@ -49,7 +73,7 @@ $(".letterBox").click((line) => {
       console.log("Not Good");
       oldBox = 0;
       clickedArrey = [];
-        $(".letterBox").css("background-color", "#f14e4e");
+      $(".letterBox").css("background-color", "#f14e4e");
 
     }
   }
@@ -59,8 +83,7 @@ $(".letterBox").click((line) => {
     clickedArrey.push(btnVal);
   }
 
-  comapreArrey()();
-
+  comapreArrey();
 });
 
 
@@ -77,16 +100,18 @@ function comapreArrey(level) {
     clickedArrey = [];
     oldBox = 0;
     counter = 0;
+    wordOutSound.play();
     $(".letterBox").css("background-color", "#f14e4e");
-let newList = ex1.join(", ");
+    let newList = ex1.join(", ");
     h1.text(newList);
   }
 
   if (longestWord(ex1).length == 1) {
-alert("game over");
+    // alert("game over");
     ex1 = [];
-    levels = levels+1;
-return levelBuild(levelsArrey[levels]);
+    levels = levels + 1;
+    endLevelSound.play();
+    return levelBuild(levelsArrey[levels]);
   }
 
   if ((newWordLength + 1) > longestWord(ex1).length) {
@@ -98,8 +123,8 @@ return levelBuild(levelsArrey[levels]);
   }
 
 
-let newList = ex1.join(", ");
- h1.text(newList);
+  let newList = ex1.join(", ");
+  h1.text(newList);
   // h1.text(ex1);
 
 }
@@ -117,7 +142,6 @@ function random() {
     }
 
   }
-// $(".Box").show(500);
 }
 
 //// fiding the longes word in the arrey ///
@@ -139,18 +163,28 @@ function longestWord(arr) {
 // building level ///
 
 function levelBuild(level) {
-  $('body').css('background-image', `url( Media/level${levels +1}.jpg)` );
 
-$('.levelTitle').text(`LEVEL ${levels +1}`);
+if (level == undefined){
+  level = level1;
+  levels=0;
+}
+
+  $('body').css('background-image', `url( Media/level${levels +1}.jpg)`);
+
+  $('.levelTitle').text(`LEVEL ${levels +1}`);
   level.forEach(value => {
     word(value);
     ex1.push(value.word);
   });
-// h1.text(ex1)
-let newList = ex1.join(", ");
-h1.text(newList);
-  // ex1.forEach( value =>{
-  //   $('.Box').append(`<h2 class> ${value} </h2>`);
-  // });
+
+  let newList = ex1.join(", ");
+  h1.text(newList);
+
   random();
 }
+
+
+// $(document).ready(function() {
+//   themMusic.play();
+//   playmusic = true;
+// });
