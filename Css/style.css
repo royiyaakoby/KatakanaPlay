@@ -135,8 +135,10 @@ width: 50px;
 @media (max-width: 1020px) {
 
 .gameBody {
-  width: 1050px;
+  width: 1100px;
 }
-
+.Box{
+  width: 1100px;
+}
 
 }
