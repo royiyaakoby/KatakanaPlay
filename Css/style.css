@@ -1,21 +1,38 @@
 body{
   /* margin: 100px 25%; */
-  margin-top: 30px;
+  height: 1000px;
+  margin-top: 0;
   text-align: center;
   align-items:center;
-  background-color: #d9eeec;
-background-size: cover;
-background-repeat: no-repeat;
+  /* background-color: #d9eeec; */
+  /* background-color: black; */
+
+}
+
+
+.gameBody {
+text-align: center;
+align-content: center;
+position: relative;
+  margin-top: 0;
+  height: 1000px;
+  width: 100%;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
 
 }
 
 .Box {
+    position:relative;
   background-color: hsla(120,100%,50%, 0.5);
   box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.75);
   width: 1000px;
-  margin-left: 20%;
-    margin-right: 20%;
+  margin: auto;
+  /* margin-left: 20%;
+    margin-right: 20%; */
+
 
 
 }
@@ -46,8 +63,7 @@ font-size: 1.2rem;
 .list {
     background-color: white;
     width: 1000px;
-    margin-left: 20%;
-      margin-right: 20%;
+      margin: auto;
     box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
@@ -60,23 +76,40 @@ font-size: 1.2rem;
 
 }
 
+
+
+
+.title{
+  width: 1000px;
+  margin: auto;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 .levelTitle {
+  position: relative;
+  left: 60px;
     display: inline-block;
   font-family: Special Elite;
   font-size: 4rem;
   position: relative;
-  left: -3%
-  /* color: salmon; */
+    margin:60px auto 0;
+    text-align: center;
+    align-items: center;
+
 
 
 }
+/* .audioDiv{
+
+} */
 .audioBtn{
-    display: inline-block;
+  display: inline-block;
+  position: relative;
+  right: 550px;
+  bottom:  20px;
   margin: 10px;
   font-size: 1.8rem;
-  position: absolute;
-  left: 20%;
-  top: 65px;
   background-color: hsla(120,100%,50%, 0.5);
   border-style: none;
 }
@@ -88,10 +121,22 @@ font-size: 1.2rem;
 
 .volSlider {
   display: inline-block;
+  position: relative;
+  right: 620px;
+  bottom:  -10px;
 margin: 10px;
-position: absolute;
-left: 20%;
-top: 110px;
 background: #d3d3d3;
 width: 50px;
+}
+
+/* //////////////////////////////// */
+
+
+@media (max-width: 1020px) {
+
+.gameBody {
+  width: 1050px;
+}
+
+
 }

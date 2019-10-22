@@ -169,7 +169,7 @@ if (level == undefined){
   levels=0;
 }
 
-  $('body').css('background-image', `url( Media/level${levels +1}.jpg)`);
+  $('.gameBody').css('background-image', `url( Media/level${levels +1}.jpg)`);
 
   $('.levelTitle').text(`LEVEL ${levels +1}`);
   level.forEach(value => {
