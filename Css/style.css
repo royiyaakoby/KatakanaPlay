@@ -24,7 +24,7 @@ position: relative;
 
 }
 
-.Box {
+.box {
     position:relative;
   background-color: hsla(120,100%,50%, 0.5);
   box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.75);
@@ -137,7 +137,7 @@ width: 50px;
 .gameBody {
   width: 1100px;
 }
-.Box{
+.box{
   width: 1100px;
 }
 
