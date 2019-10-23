@@ -132,18 +132,18 @@ width: 50px;
 /* //////////////////////////////// */
 
 
-@media (max-width: 1020px) {
+@media (max-width: 1300px) {
 
 body{
-  width: 1100px;
+  width: 1300px;
     height: 1000px;
 }
 .gameBody {
-  width: 1100px;
+  width: 1300px;
     height: 1000px;
 }
 .box{
-  width: 1100px;
+  width: 1300px;
 }
 
 }
