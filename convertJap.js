@@ -343,6 +343,11 @@ function convertJap(hiragana) {
       convert = "よ";
       break;
 
+      case "ョ":
+        convert = "ょ";
+        break;
+
+
 
     case "ー":
       convert = "ー";

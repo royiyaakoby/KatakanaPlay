@@ -8,7 +8,7 @@ let clickedArrey = [];
 let ex1 = [];
 let h1 = $(".h1Ex");
 let letterArrey = ['ア', 'イ', 'ウ', 'エ', 'オ', 'カ', 'キ', 'ク', 'ケ', 'コ', 'サ', 'シ', 'ス', 'セ', 'ソ', 'タ', 'チ', 'ツ', 'テ', 'ト', 'ナ', 'ニ', 'ネ', 'ヌ', 'ノ', 'ハ', 'ヒ', 'フ', 'ヘ', 'ホ', 'マ', 'ミ', 'ム', 'メ', 'モ', 'ヤ', 'ユ', 'ヨ'];
-let levelsArrey = [level1, level2];
+let levelsArrey = [level1, level2, level3];
 
 const wordOutSound = new Audio('Media/wordOut.mp3');
 const clickSound = new Audio('Media/click.mp3');
@@ -163,8 +163,9 @@ function longestWord(arr) {
 // building level ///
 
 function levelBuild(level) {
-
+$('.letterBox').text('-');
 if (level == undefined){
+  alert('You finshied the game! YAY!');
   level = level1;
   levels=0;
 }

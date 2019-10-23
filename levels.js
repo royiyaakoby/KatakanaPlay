@@ -151,3 +151,72 @@ const israel = {
 
 
 const level2 = [america,europe,italy,holland,canada,spain,germany,france,russhia,israel];
+
+const taxi = {
+  word : "たくしー",
+  letters: ['タ','ク','シ','ー'],
+  location :[23,43,63,83]
+};
+
+
+const camera = {
+  word : "かめら",
+  letters: ['カ','メ','ラ'],
+  location :[112,113,114]
+};
+
+
+const tv = {
+  word : "てれび",
+  letters: ['テ','レ','ビ'],
+  location :[155,175,195]
+};
+
+const anima = {
+  word : "あにめ",
+  letters: ['ア','ニ','メ'],
+  location :[73,93,113]
+};
+
+const escalator = {
+  word : "えすかれーたー",
+  letters: ['エ','ス','カ','レ','ー','タ','ー'],
+  location :[20,40,60,80,100,120,140]
+};
+
+
+const motorbike = {
+  word : "ばいく",
+  letters: ['バ','イ','ク'],
+  location :[50,51,52]
+};
+
+const item = {
+  word : "あいてむ",
+  letters: ['ア','イ','テ','ム'],
+  location :[176,177,178,179]
+};
+
+
+const mission = {
+  word : "みっしょん",
+  letters: ['ミ','ッ','シ','ョ','ン'],
+  location :[88,89,90,91,92]
+};
+
+
+
+const glass = {
+  word : "ぐらす",
+  letters: ['グ','ラ','ス'],
+  location :[7,27,47]
+};
+
+
+const knife = {
+  word : "ないふ",
+  letters: ['ナ','イ','フ'],
+  location :[141,161,181]
+};
+
+const level3 = [taxi,camera,tv,anima,escalator,motorbike,item,mission,glass,knife];
