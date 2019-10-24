@@ -10,6 +10,8 @@ let h1 = $(".h1Ex");
 let letterArrey = ['ア', 'イ', 'ウ', 'エ', 'オ', 'カ', 'キ', 'ク', 'ケ', 'コ', 'サ', 'シ', 'ス', 'セ', 'ソ', 'タ', 'チ', 'ツ', 'テ', 'ト', 'ナ', 'ニ', 'ネ', 'ヌ', 'ノ', 'ハ', 'ヒ', 'フ', 'ヘ', 'ホ', 'マ', 'ミ', 'ム', 'メ', 'モ', 'ヤ', 'ユ', 'ヨ'];
 let levelsArrey = [level1, level2, level3];
 
+const modal = $('.modal');
+const closeModal = $('.close');
 const wordOutSound = new Audio('Media/wordOut.mp3');
 const clickSound = new Audio('Media/click.mp3');
 const endLevelSound = new Audio('Media/levelEnd.mp3');
@@ -47,6 +49,11 @@ $('.volSlider').on('input change', (event) => {
   wordOutSound.volume = levels / 100;
   endLevelSound.volume = levels / 100;
 
+});
+
+$('.close').on('click', ()=>{
+    modal.css('display',"none");
+    $('.box , .list , .title').fadeIn(500);
 });
 
 /////////// START LEVEL /////////
@@ -164,8 +171,12 @@ function longestWord(arr) {
 
 function levelBuild(level) {
 $('.letterBox').text('-');
+
 if (level == undefined){
-  alert('You finshied the game! YAY!');
+  // alert('You finshied the game! YAY!');
+$('.box , .list , .title').hide();
+  modal.fadeIn(600);
+  modal.css('display',"block");
   level = level1;
   levels=0;
 }
@@ -185,7 +196,9 @@ if (level == undefined){
 }
 
 
+
 // $(document).ready(function() {
-//   themMusic.play();
-//   playmusic = true;
+  // themMusic.play();
+  // playmusic = true;
+//     modal.hide();
 // });
