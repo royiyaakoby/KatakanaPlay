@@ -15,8 +15,16 @@ const closeModal = $('.close');
 const wordOutSound = new Audio('Media/wordOut.mp3');
 const clickSound = new Audio('Media/click.mp3');
 const endLevelSound = new Audio('Media/levelEnd.mp3');
-const themMusic = new Audio('Media/Theme.mp3');
+let themMusic = new Audio('Media/Theme1.mp3');
 let playmusic = false;
+$(".phoneAlert").hide();
+
+
+if ($(window).width() < 700) {
+  $('.box , .list , .title').hide();
+$(".phoneAlert").show();
+
+}
 
 
 
@@ -26,6 +34,7 @@ $('.audioBtn').on('click', function() {
     themMusic.pause();
 
   } else {
+    themMusic = new Audio('Media/Theme1.mp3');
     playmusic = true;
     themMusic.loop = true;
     themMusic.play();
@@ -54,6 +63,12 @@ $('.volSlider').on('input change', (event) => {
 $('.close').on('click', ()=>{
     modal.css('display',"none");
     $('.box , .list , .title').fadeIn(500);
+    if (playmusic == true){
+      themMusic.pause();
+      themMusic = new Audio('Media/Theme1.mp3');
+      themMusic.loop = true;
+      themMusic.play();
+    }
 });
 
 /////////// START LEVEL /////////
@@ -92,7 +107,6 @@ $(".letterBox").click((line) => {
 
   comapreArrey();
 });
-
 
 
 //// Chavking word woth arrey Method ///
@@ -173,6 +187,11 @@ function levelBuild(level) {
 $('.letterBox').text('-');
 
 if (level == undefined){
+if (playmusic == true) {
+  themMusic.pause();
+  themMusic = new Audio('Media/Theme2.mp3');
+  themMusic.play();
+}
   // alert('You finshied the game! YAY!');
 $('.box , .list , .title').hide();
   modal.fadeIn(600);
