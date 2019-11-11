@@ -41,15 +41,15 @@ $('.audioBtn').on('click', function() {
   }
 });
 ///////////////////////////// EXTREA KEYS ///////
-$('body').keypress((key) => {
-  let targetKey = key.key;
-  if (targetKey <= 9 && targetKey > 0) {
-    ex1 = [];
-    levels = targetKey - 1;
-    levelBuild(levelsArrey[levels]);
-
-  }
-});
+// $('body').keypress((key) => {
+//   let targetKey = key.key;
+//   if (targetKey <= 9 && targetKey > 0) {
+//     ex1 = [];
+//     levels = targetKey - 1;
+//     levelBuild(levelsArrey[levels]);
+//
+//   }
+// });
 
 $('.volSlider').on('input change', (event) => {
   let levels = event.target.value;
